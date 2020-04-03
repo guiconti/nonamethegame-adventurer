@@ -9,55 +9,67 @@
  */
 
 const logger = require('javascript-custom-logger');
-const constants = require('../utils/constants');
+const { error, messages, endpoints } = require('../utils/constants');
 // eslint-disable-next-line
 module.exports = (err, req, res, next) => {
   switch (err.name) {
-    case constants.error.name.VALIDATION_ERROR:
+    case error.name.VALIDATION_ERROR:
       return res.status(400).json({
         data: err.details[0].message,
       });
-    case constants.error.name.INVALID_SESSION:
+    case error.name.DOCUMENT_NOT_FOUND_ERROR:
+      switch (req.route.path) {
+        case endpoints.RETRIEVE_ADVENTURERS:
+          return res.status(200).json({
+            data: []
+          });
+        default:
+          return res.status(404).json({
+            data: messages.error.DOCUMENT_NOT_FOUND
+          });
+      }
+    case error.name.INVALID_SESSION:
       return res.status(403).json({
-        data: constants.messages.error.UNAUTHORIZED,
+        data: messages.error.UNAUTHORIZED,
       });
-    case constants.error.name.INVALID_CLASS:
+    case error.name.INVALID_CLASS:
       return res.status(400).json({
-        data: constants.messages.error.INVALID_CLASS,
+        data: messages.error.INVALID_CLASS,
       });
-    case constants.error.name.INVALID_RACE:
+    case error.name.INVALID_RACE:
       return res.status(400).json({
-        data: constants.messages.error.INVALID_RACE,
+        data: messages.error.INVALID_RACE,
       });
-    case constants.error.name.INVALID_GENDER:
+    case error.name.INVALID_GENDER:
       return res.status(400).json({
-        data: constants.messages.error.INVALID_GENDER,
+        data: messages.error.INVALID_GENDER,
       });
-    case constants.error.name.INVALID_ATTRIBUTES:
+    case error.name.INVALID_ATTRIBUTES:
       return res.status(400).json({
-        data: constants.messages.error.INVALID_ATTRIBUTES,
+        data: messages.error.INVALID_ATTRIBUTES,
       });
     default:
       break;
   }
   switch (err.code) {
-    case constants.error.code.UNIQUE_CONSTRAINT:
+    case error.code.UNIQUE_CONSTRAINT:
       return res.status(409).json({
-        data: constants.messages.error.UNIQUE_CONSTRAINT,
+        data: messages.error.UNIQUE_CONSTRAINT,
       });
     default:
       break;
   }
   switch (err.type) {
-    case constants.error.type.PARSING_FAILED:
+    case error.type.PARSING_FAILED:
       return res.status(400).json({
-        data: constants.messages.error.INVALID_JSON,
+        data: messages.error.INVALID_JSON,
       });
     default:
       break;
   }
   logger.error(err);
+  console.log('err :', err);
   return res.status(500).json({
-    data: constants.messages.error.UNEXPECTED_RUNNING,
+    data: messages.error.UNEXPECTED_RUNNING,
   });
 };

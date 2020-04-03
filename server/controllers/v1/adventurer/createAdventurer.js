@@ -86,6 +86,11 @@ module.exports = async (req, res, next) => {
   const newAdventurer = {
     user: req.user._id,
     name,
+    //  TODO: Change this to an actual calculation
+    health: 100,
+    currentHealth: 100,
+    mana: 100,
+    currentMana: 100,
     class: selectedClass,
     race: selectedRace,
     gender: selectedGender,

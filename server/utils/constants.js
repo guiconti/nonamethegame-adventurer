@@ -8,6 +8,7 @@ module.exports = {
       INVALID_ATTRIBUTES: 'The attributes sent are invalid.',
       UNIQUE_CONSTRAINT: 'Data sent is violating a unique constraint.',
       INVALID_JSON: 'Data sent is an invalid json.',
+      DOCUMENT_NOT_FOUND: 'No data found.',
       UNEXPECTED_RUNNING:
         'An unexpected error occurred while processing your request.',
     },
@@ -54,6 +55,7 @@ module.exports = {
   },
   endpoints: {
     CREATE_ADVENTURER: '/',
+    RETRIEVE_ADVENTURERS: '/',
   },
   tables: {
     USERS: 'Users',
@@ -63,5 +65,6 @@ module.exports = {
     USER_WITH_ONLY_ID_DATA: ['_id'],
     USER_WITH_PROFILE_DATA: ['_id', 'email'],
     USER_WITH_PASSWORD_DATA: ['_id', 'password'],
+    ADVENTURER_WITH_SUMMARY_DATE: ['_id', 'name', 'level', 'class', 'race', 'gender']
   },
 };

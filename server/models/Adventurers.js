@@ -12,6 +12,38 @@ module.exports = mongoose => {
       unique: true,
       required: true,
     },
+    level: {
+      type: Number,
+      default: 1,
+      required: true,
+    },
+    experience: {
+      type: Number,
+      default: 0,
+      required: true,
+    },
+    experienceToNextLevel: {
+      type: Number,
+      //  TODO: Change this to a real value
+      default: 100,
+      required: true
+    },
+    health: {
+      type: Number,
+      required: true,
+    },
+    currentHealth: {
+      type: Number,
+      required: true,
+    },
+    mana: {
+      type: Number,
+      required: true,
+    },
+    currentMana: {
+      type: Number,
+      required: true,
+    },
     class: {
       type: String,
       enum: values.CLASSES,
