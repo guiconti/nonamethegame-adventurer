@@ -28,5 +28,11 @@ router.get(
   userMiddleware,
   controllers.retrieveAdventurer
 );
+router.patch(
+  endpoints.SELECT_ADVENTURER,
+  schemas.selectAdventurer,
+  userMiddleware,
+  controllers.selectAdventurer
+);
 
 module.exports = router;

@@ -36,10 +36,11 @@
  */
 
 const findDatabase = require('../../../utils/findDatabase');
+const updateDatabase = require('../../../utils/updateDatabase');
 const { tables } = require('../../../utils/constants');
 
 module.exports = async (req, res, next) => {
-  const { id } = req.params;
+  const { id } = req.body;
   let adventurer;
   try {
     adventurer = await findDatabase(
@@ -50,6 +51,11 @@ module.exports = async (req, res, next) => {
       1
     );
   } catch (err) {
+    return next(err);
+  }
+  try {
+    await updateDatabase(tables.USERS, req.user._id, { selectedAdventurer: adventurer._id });
+  } catch(err) {
     return next(err);
   }
   return res.status(200).json({

@@ -59,6 +59,7 @@ module.exports = {
     CREATE_ADVENTURER: '/',
     RETRIEVE_ADVENTURERS: '/',
     RETRIEVE_ADVENTURER: '/:id',
+    SELECT_ADVENTURER: '/select',
   },
   tables: {
     USERS: 'Users',
