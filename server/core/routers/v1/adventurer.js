@@ -17,5 +17,10 @@ router.post(
   userMiddleware,
   controllers.createAdventurer
 );
+router.get(
+  endpoints.RETRIEVE_ADVENTURERS,
+  userMiddleware,
+  controllers.retrieveAdventurers
+);
 
 module.exports = router;
