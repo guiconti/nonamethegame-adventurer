@@ -1,7 +1,15 @@
 module.exports = {
   messages: {
     error: {
-      UNEXPECTED_RUNNING: 'An unexpected error occurred while processing your request.',
+      UNAUTHORIZED: 'You need to sign in to access this feature.',
+      INVALID_CLASS: 'The class sent is invalid.',
+      INVALID_RACE: 'The race sent is invalid.',
+      INVALID_GENDER: 'The gender sent is invalid.',
+      INVALID_ATTRIBUTES: 'The attributes sent are invalid.',
+      UNIQUE_CONSTRAINT: 'Data sent is violating a unique constraint.',
+      INVALID_JSON: 'Data sent is an invalid json.',
+      UNEXPECTED_RUNNING:
+        'An unexpected error occurred while processing your request.',
     },
   },
   error: {
@@ -11,9 +19,16 @@ module.exports = {
       NOT_FOUND: 'NotFoundError',
       INVALID_AUTH: 'InvalidAuthError',
       INVALID_SESSION: 'InvalidSessionError',
+      INVALID_CLASS: 'InvalidClass',
+      INVALID_RACE: 'InvalidRace',
+      INVALID_GENDER: 'InvalidGender',
+      INVALID_ATTRIBUTES: 'InvalidAttributes',
     },
     code: {
       UNIQUE_CONSTRAINT: 11000,
+    },
+    type: {
+      PARSING_FAILED: 'entity.parse.failed',
     },
   },
   values: {
@@ -25,12 +40,24 @@ module.exports = {
     cookies: {
       SESSION: 'session',
     },
+    STARTING_ATTRIBUTE_POINTS: 9,
+    CLASSES: ['Swordsman', 'Mage', 'Thief'],
+    RACES: ['Human', 'Lizard', 'Undead', 'Dwarf', 'Elf'],
+    GENDERS: ['Male', 'Female'],
+    ATTRIBUTES: [
+      'strength',
+      'intelligence',
+      'agility',
+      'dexterity',
+      'vitality',
+    ],
   },
   endpoints: {
-    CREATE_ADVENTURER: '/'
+    CREATE_ADVENTURER: '/',
   },
   tables: {
     USERS: 'Users',
+    ADVENTURERS: 'Adventurers',
   },
   selections: {
     USER_WITH_ONLY_ID_DATA: ['_id'],

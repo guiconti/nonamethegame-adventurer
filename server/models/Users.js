@@ -9,5 +9,13 @@ module.exports = mongoose => {
       type: String,
       required: true,
     },
+    selectedAdventurer: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Adventurers'
+    },
+    adventurers: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Adventurers'
+    }]
   });
 };

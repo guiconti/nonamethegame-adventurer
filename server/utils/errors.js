@@ -24,8 +24,44 @@ class InvalidSession extends Error {
   }
 }
 
+class InvalidClass extends Error {
+  constructor(...args) {
+    super(...args);
+    this.name = constants.error.name.INVALID_CLASS
+    Error.captureStackTrace(this, InvalidClass);
+  }
+}
+
+class InvalidRace extends Error {
+  constructor(...args) {
+    super(...args);
+    this.name = constants.error.name.INVALID_RACE
+    Error.captureStackTrace(this, InvalidRace);
+  }
+}
+
+class InvalidGender extends Error {
+  constructor(...args) {
+    super(...args);
+    this.name = constants.error.name.INVALID_GENDER
+    Error.captureStackTrace(this, InvalidGender);
+  }
+}
+
+class InvalidAttributes extends Error {
+  constructor(...args) {
+    super(...args);
+    this.name = constants.error.name.INVALID_ATTRIBUTES
+    Error.captureStackTrace(this, InvalidAttributes);
+  }
+}
+
 module.exports = {
   NotFound,
   InvalidAuth,
   InvalidSession,
+  InvalidClass,
+  InvalidRace,
+  InvalidGender,
+  InvalidAttributes,
 };
