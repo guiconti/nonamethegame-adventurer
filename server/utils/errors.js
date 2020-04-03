@@ -56,6 +56,14 @@ class InvalidAttributes extends Error {
   }
 }
 
+class InvalidId extends Error {
+  constructor(...args) {
+    super(...args);
+    this.name = constants.error.name.INVALID_ATTRIBUTES
+    Error.captureStackTrace(this, InvalidId);
+  }
+}
+
 module.exports = {
   NotFound,
   InvalidAuth,
@@ -64,4 +72,5 @@ module.exports = {
   InvalidRace,
   InvalidGender,
   InvalidAttributes,
+  InvalidId,
 };

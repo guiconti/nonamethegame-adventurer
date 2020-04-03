@@ -48,6 +48,10 @@ module.exports = (err, req, res, next) => {
       return res.status(400).json({
         data: messages.error.INVALID_ATTRIBUTES,
       });
+    case error.name.INVALID_ID:
+      return res.status(400).json({
+        data: messages.error.INVALID_ID,
+      });
     default:
       break;
   }

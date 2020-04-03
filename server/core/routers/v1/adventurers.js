@@ -22,5 +22,11 @@ router.get(
   userMiddleware,
   controllers.retrieveAdventurers
 );
+router.get(
+  endpoints.RETRIEVE_ADVENTURER,
+  schemas.retrieveAdventurer,
+  userMiddleware,
+  controllers.retrieveAdventurer
+);
 
 module.exports = router;

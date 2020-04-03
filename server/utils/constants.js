@@ -6,6 +6,7 @@ module.exports = {
       INVALID_RACE: 'The race sent is invalid.',
       INVALID_GENDER: 'The gender sent is invalid.',
       INVALID_ATTRIBUTES: 'The attributes sent are invalid.',
+      INVALID_ID: 'The id sent is invalid.',
       UNIQUE_CONSTRAINT: 'Data sent is violating a unique constraint.',
       INVALID_JSON: 'Data sent is an invalid json.',
       DOCUMENT_NOT_FOUND: 'No data found.',
@@ -24,6 +25,7 @@ module.exports = {
       INVALID_RACE: 'InvalidRace',
       INVALID_GENDER: 'InvalidGender',
       INVALID_ATTRIBUTES: 'InvalidAttributes',
+      INVALID_ID: 'InvalidId',
     },
     code: {
       UNIQUE_CONSTRAINT: 11000,
@@ -56,6 +58,7 @@ module.exports = {
   endpoints: {
     CREATE_ADVENTURER: '/',
     RETRIEVE_ADVENTURERS: '/',
+    RETRIEVE_ADVENTURER: '/:id',
   },
   tables: {
     USERS: 'Users',
