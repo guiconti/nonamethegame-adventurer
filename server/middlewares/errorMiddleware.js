@@ -16,6 +16,10 @@ module.exports = (err, req, res, next) => {
       return res.status(400).json({
         data: err.details[0].message,
       });
+    case constants.error.name.INVALID_SESSION:
+      return res.status(403).json({
+        data: constants.messages.error.UNAUTHORIZED,
+      });
     default:
       return res.status(500).json({
         data: constants.messages.error.UNEXPECTED_RUNNING,
