@@ -4,17 +4,48 @@
  * @apiGroup Adventurer
  * @apiVersion 0.0.1
  *
- * @apiParam {String} Example Example's body string
+ * @apiParam {String} Name Adventurer's name
+ * @apiParam {String} Class Adventurer's class
+ * @apiParam {String} Race Adventurer's race
+ * @apiParam {String} Gender Adventurer's gender
+ * @apiParam {Object} Attributes Adventurer's attributes
  * @apiParamExample {json} Request-example:
  * {
- *     "example": "Test"
+ *     "name": "Supah Milko",
+ *     "class": "Mage",
+ *     "race": "Dwarf",
+ *     "gender": "Female",
+ *     "attributes": {
+ *        "strength": 1,
+ *        "intelligence": 8,
+ *        "agility": 2,
+ *        "dexterity": 4,
+ *        "vitality": 1
+ *     }
  * }
  * @apiSuccess (200) {String} data Hey.
  * @apiSuccessExample {json} Success-Response:
-    { "data": "Hey!" }
+  {
+    "data": {
+        "_id": "5e87892efe72b956e9fea5ae",
+        "user": "5e8432cddbf3b31f12b91b6d",
+        "name": "The best adventurer",
+        "class": "Swordsman",
+        "race": "Lizard",
+        "gender": "Male",
+        "attributes": {
+            "strength": 1,
+            "intelligence": 1,
+            "agility": 4,
+            "dexterity": 4,
+            "vitality": 4
+        },
+        "__v": 0
+    }
+  }
  * @apiError (400) {String} msg Error message.
  * @apiErrorExample {json} Error-Response:
-    { "data": "example is missing or is not correctly formatted." }
+    { "data": "name is missing or is not correctly formatted." }
   *
  */
 
