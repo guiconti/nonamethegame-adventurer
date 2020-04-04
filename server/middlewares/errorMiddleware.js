@@ -72,7 +72,6 @@ module.exports = (err, req, res, next) => {
       break;
   }
   logger.error(err);
-  console.log('err :', err);
   return res.status(500).json({
     data: messages.error.UNEXPECTED_RUNNING,
   });
