@@ -66,6 +66,11 @@ module.exports = mongoose => {
         message: () => messages.error.INVALID_ATTRIBUTES
       },
       required: true,
+    },
+    currentMap: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Maps',
+      default: mongoose.Types.ObjectId('5e88c755fca71f706874657e'),
     }
   });
 };
