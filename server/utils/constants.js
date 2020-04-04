@@ -55,6 +55,11 @@ module.exports = {
       'dexterity',
       'vitality',
     ],
+    STARTING_MAP_ID: '5e88c755fca71f706874657e',
+    STARTING_MAP_POSITION: {
+      x: 0,
+      y: 0
+    },
   },
   endpoints: {
     CREATE_ADVENTURER: '/',
