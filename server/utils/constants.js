@@ -44,6 +44,7 @@ module.exports = {
       SESSION: 'session',
     },
     STARTING_ATTRIBUTE_POINTS: 9,
+    MAXIMUM_NAME_LENGTH: 26,
     CLASSES: ['Swordsman', 'Mage', 'Thief'],
     RACES: ['Human', 'Lizard', 'Undead', 'Dwarf', 'Elf'],
     GENDERS: ['Male', 'Female'],
@@ -59,6 +60,7 @@ module.exports = {
     CREATE_ADVENTURER: '/',
     RETRIEVE_ADVENTURERS: '/',
     RETRIEVE_ADVENTURER: '/:id',
+    RETRIEVE_SELECTED_ADVENTURER: '/selected',
     SELECT_ADVENTURER: '/select',
   },
   tables: {
@@ -67,7 +69,7 @@ module.exports = {
   },
   selections: {
     USER_WITH_ONLY_ID_DATA: ['_id'],
-    USER_WITH_PROFILE_DATA: ['_id', 'email'],
+    USER_WITH_PROFILE_DATA: ['_id', 'email', 'selectedAdventurer'],
     USER_WITH_PASSWORD_DATA: ['_id', 'password'],
     ADVENTURER_WITH_SUMMARY_DATE: ['_id', 'name', 'level', 'class', 'race', 'gender']
   },

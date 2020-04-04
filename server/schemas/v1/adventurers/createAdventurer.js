@@ -2,7 +2,7 @@ const joi = require('@hapi/joi');
 const { values } = require('../../../utils/constants');
 
 const schema = joi.object().keys({
-  name: joi.string().required(),
+  name: joi.string().max(values.MAXIMUM_NAME_LENGTH).required(),
   selectedClass: joi.string().required(),
   selectedRace: joi.string().required(),
   selectedGender: joi.string().required(),

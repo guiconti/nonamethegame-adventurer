@@ -1,5 +1,5 @@
 /**
- * @api {PATCH} /v1/adventurers/selected PATCH Select adventurer
+ * @api {GET} /v1/adventurers/selected GET Retrieve adventurer's info
  * @apiName Retrieve Adventurer
  * @apiGroup Adventurer
  * @apiVersion 0.0.1
@@ -36,11 +36,14 @@
  */
 
 const findDatabase = require('../../../utils/findDatabase');
-const updateDatabase = require('../../../utils/updateDatabase');
+const { InvalidId } = require('../../../utils/errors');
 const { tables } = require('../../../utils/constants');
 
 module.exports = async (req, res, next) => {
-  const { id } = req.body;
+  const id = req.user.selectedAdventurer;
+  if (!id) {
+    return next(new InvalidId());
+  }
   let adventurer;
   try {
     adventurer = await findDatabase(
@@ -51,11 +54,6 @@ module.exports = async (req, res, next) => {
       1
     );
   } catch (err) {
-    return next(err);
-  }
-  try {
-    await updateDatabase(tables.USERS, req.user._id, { selectedAdventurer: adventurer._id });
-  } catch(err) {
     return next(err);
   }
   return res.status(200).json({
