@@ -67,6 +67,16 @@ module.exports = mongoose => {
       },
       required: true,
     },
+    sightRange: {
+      type: Number,
+      required: true,
+      default: values.DEFAULT_SIGHT_RANGE
+    },
+    attackRange: {
+      type: Number,
+      required: true,
+      default: values.DEFAULT_ATTACK_RANGE
+    },
     currentMap: {
       id: {
         type: mongoose.Schema.Types.ObjectId,

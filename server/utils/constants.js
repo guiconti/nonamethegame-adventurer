@@ -60,6 +60,8 @@ module.exports = {
       x: 0,
       y: 0
     },
+    DEFAULT_SIGHT_RANGE: 6,
+    DEFAULT_ATTACK_RANGE: 1
   },
   endpoints: {
     CREATE_ADVENTURER: '/',
