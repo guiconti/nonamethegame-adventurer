@@ -28,7 +28,7 @@ module.exports = mongoose => {
       default: 100,
       required: true
     },
-    health: {
+    baseHealth: {
       type: Number,
       required: true,
     },
@@ -36,7 +36,7 @@ module.exports = mongoose => {
       type: Number,
       required: true,
     },
-    mana: {
+    baseMana: {
       type: Number,
       required: true,
     },

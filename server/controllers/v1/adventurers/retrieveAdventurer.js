@@ -36,6 +36,7 @@
  */
 
 const findDatabase = require('../../../utils/findDatabase');
+const updateAdventurerValues = require('../../../utils/updateAdventurerValues');
 const { tables } = require('../../../utils/constants');
 
 module.exports = async (req, res, next) => {
@@ -51,6 +52,13 @@ module.exports = async (req, res, next) => {
     );
   } catch (err) {
     return next(err);
+  }
+  updateAdventurerValues(adventurer);
+  if (adventurer.currentHealth > adventurer.health) {
+    adventurer.currentHealth = adventurer.health;
+  }
+  if (adventurer.currentMana > adventurer.mana) {
+    adventurer.currentMana = adventurer.mana;
   }
   return res.status(200).json({
     data: adventurer,
