@@ -77,6 +77,36 @@ module.exports = mongoose => {
       required: true,
       default: values.DEFAULT_ATTACK_RANGE
     },
+    baseAttack: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
+    baseMagicAttack: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
+    baseDefense: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
+    baseMagicDefense: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
+    baseHit: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
+    baseFlee: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
     currentMap: {
       id: {
         type: mongoose.Schema.Types.ObjectId,
