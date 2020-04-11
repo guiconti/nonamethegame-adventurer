@@ -107,6 +107,16 @@ module.exports = mongoose => {
       required: true,
       default: 1,
     },
+    baseAttackSpeed: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
+    baseMovementSpeed: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
     currentMap: {
       id: {
         type: mongoose.Schema.Types.ObjectId,
