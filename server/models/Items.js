@@ -1,4 +1,4 @@
-const { item } = require('../constants');
+const { item } = require('../utils/constants');
 
 module.exports = (mongoose) => {
   return new mongoose.Schema({

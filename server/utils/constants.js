@@ -58,7 +58,7 @@ module.exports = {
     STARTING_MAP_ID: '5e88c755fca71f706874657e',
     STARTING_MAP_POSITION: {
       x: 0,
-      y: 0
+      y: 0,
     },
     DEFAULT_SIGHT_RANGE: 6,
     DEFAULT_ATTACK_RANGE: 1,
@@ -88,6 +88,20 @@ module.exports = {
     USER_WITH_ONLY_ID_DATA: ['_id'],
     USER_WITH_PROFILE_DATA: ['_id', 'email', 'selectedAdventurer'],
     USER_WITH_PASSWORD_DATA: ['_id', 'password'],
-    ADVENTURER_WITH_SUMMARY_DATE: ['_id', 'name', 'level', 'class', 'race', 'gender']
+    ADVENTURER_WITH_SUMMARY_DATE: [
+      '_id',
+      'name',
+      'level',
+      'class',
+      'race',
+      'gender',
+    ],
+  },
+  item: {
+    TYPES: ['miscellaneous', 'equipment', 'consumable', 'card'],
+    MISCELLANEOUS_TYPE: 'miscellaneous',
+    EQUIPMENT_TYPE: 'equipment',
+    CONSUMABLE_TYPE: 'consumable',
+    CARD_TYPE: 'card',
   },
 };
