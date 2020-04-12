@@ -131,5 +131,5 @@ module.exports = mongoose => {
         default: values.STARTING_MAP_POSITION,
       },
     }
-  });
+  }, { minimize: false });
 };
