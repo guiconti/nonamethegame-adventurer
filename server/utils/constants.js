@@ -79,10 +79,13 @@ module.exports = {
     RETRIEVE_ADVENTURER: '/:id',
     RETRIEVE_SELECTED_ADVENTURER: '/selected',
     SELECT_ADVENTURER: '/select',
+    RETRIEVE_ITEMS: '/',
+    RETRIEVE_ITEM: '/:id',
   },
   tables: {
     USERS: 'Users',
     ADVENTURERS: 'Adventurers',
+    ITEMS: 'Items',
   },
   selections: {
     USER_WITH_ONLY_ID_DATA: ['_id'],
