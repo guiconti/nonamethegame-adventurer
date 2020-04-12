@@ -117,6 +117,7 @@ module.exports = mongoose => {
       required: true,
       default: 1,
     },
+    inventory: mongoose.Schema.Inventory,
     currentMap: {
       id: {
         type: mongoose.Schema.Types.ObjectId,
