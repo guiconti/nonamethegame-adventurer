@@ -131,6 +131,11 @@ module.exports = mongoose => {
         required: true,
         default: values.STARTING_MAP_POSITION,
       },
-    }
+    },
+    pointsToDistribute: {
+      type: Number,
+      required: true,
+      default: 10,
+    },
   }, { minimize: false });
 };
